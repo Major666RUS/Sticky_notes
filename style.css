@@ -1,0 +1,103 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-size: 16px;
+}
+
+#root {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  background-color: aliceblue;
+  height: 100vh;
+}
+
+* {
+  font-family: 'Redressed', cursive;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  padding-top: 1rem;
+}
+
+.stickyNotes {
+  padding: 2rem;
+  height: 100%;
+  min-width: 1024px;
+}
+
+.stickyNotes_item {
+  position: relative;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
+  float: left;
+  cursor: move;
+  min-width: 280px;
+  min-height: 300px;
+  font-size: 1.5rem;
+  box-shadow: 5px 5px 10px -2px rgb(33 33 33 / 30%);
+  transform: skew(-1deg,1deg);
+  transition: transform .15s;
+  z-index: 1;
+}
+
+.stickyNotes_item.drag-over {
+  outline: .25rem blueviolet dashed;
+}
+
+.stickyNotes_itemText {
+  min-height: 200px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: .25rem;
+  width: 100%;
+  line-height: inherit;
+  color: inherit;
+  font-size: inherit;
+}
+
+.stickyNotes_create,
+.stickyNotes_remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 4rem;
+  height: 4rem;
+  margin: 1rem;
+  font-size: 3.75rem;
+  line-height: 1;
+  color: #fff;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  box-shadow: 0 0 4px rgb(0 0 0 / 14%), 0 4px 8px rgb(0 0 0 / 28%);
+  z-index: 998;
+  outline: none;
+}
+
+.stickyNotes_remove {
+  left: 0;
+  background-image: url('https://img.icons8.com/material-outlined/48/000000/trash--v1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #bcefde;
+}
+
+.stickyNotes_remove.drag-over {
+  background-color: red;
+}
+
+.stickyNotes_create {
+  right: 0;
+  background-color: #6f61cf;
+  cursor: pointer;
+}
